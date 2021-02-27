@@ -14,7 +14,7 @@ else (passwordLength > 128
 console.log(passwordLength);
 }
 
-//Prompt for character types
+//Prompt for character types (upper, lower, symbols)
 
 
 
