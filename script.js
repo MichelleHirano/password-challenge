@@ -39,7 +39,7 @@ function generatePassword() {
 
   var ucChoice = confirm("How about uppercase chacracters?");
   if(ucChoice){
-    newArray.push.apply(newArray, ucChoice);
+    newArray.push.apply(newArray, lowerCase, ucChoice);
     console.log(newArray);
   }
     
@@ -55,7 +55,7 @@ function generatePassword() {
     console.log(newArray);
   }
 
-var password = "";
+var password ="";
   for(i = 0; i===number; i++){
     password += newArray[Math.floor(Math.random()* newArray.number)]
   }
