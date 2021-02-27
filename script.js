@@ -6,7 +6,7 @@ function passwordLength(){
 var number = window.prompt("How long would you like your password to be? Enter a number between 8-128");
 
 if (number < 8 || number > 128)
-  window.alert("Sorry please enter a length between 8 and 12");
+  window.alert("Sorry please enter a length between 8 and 128");
 
 }
 
