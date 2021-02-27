@@ -2,21 +2,17 @@
 
 //Length of password
 
-int passwordLength = window.prompt("How long would you like your password to be? Enter a number between 8-128");
+function passwordLength(){
+var number = window.prompt("How long would you like your password to be? Enter a number between 8-128");
 
-if (passwordLength < 8)
+if (number < 8 || number > 128)
   window.alert("Sorry please enter a length between 8 and 12");
 
-
-else (passwordLength > 128
-  window.alert("Sorry please enter a length between 8 and 12");
-
-
-console.log(passwordLength);
 }
 
-//Prompt for character types (upper, lower, symbols)
+passwordLength();
 
+//Prompt for character types (upper, lower, symbols)
 
 
 // Get references to the #generate element
