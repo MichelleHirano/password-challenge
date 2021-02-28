@@ -13,9 +13,9 @@ var numValue = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 //Special Characters
 var spChar = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 
-//var allChar = lowerCase + upperCase + numericValue + specialCharacters
+//var choices outside the if statement to concat
 
-var newArray = []
+var choices;
 
 
 //Length of password
@@ -32,37 +32,91 @@ function generatePassword() {
 
   //Prompt for character types
   var lcChoice = confirm("Would you like your password to contain lowercase characters?");
-    if(lcChoice){
-      newArray.push.apply(newArray, lowerCase);
-      console.log(newArray);
+  var ucChoice = confirm("How about uppercase chacracters?");
+  var numchoice = confirm("Would you like numbers?");
+  var spChoice = confirm("How about special charcaters? Like & or $?");
+ 
+  
+  //If for  negative on all 4 options
+  //if (!lcChoice && !ucChoice && !numchoice && spChoice){
+  //  choices = alert("You must choose a criteria!");
+  //}
+
+  //Else if for all 4 character options
+ if (lcChoice && ucChoice && numchoice && spChoice){
+    choices= spChoice.concat(numValue, upperCase, lowerCase);
+  }
+   
+  //Else if for 3 options (lc, uc, n) (uc, n, sp) (n, sp, lc) (sp, lc, uc)
+  else if (lcChoice && ucChoice && numchoice){
+    choices= lcChoice.concat(numValue, upperCase);
+  }
+
+  else if (lcChoice && ucChoice && spChoice){
+    choices= lowerCase.concat(spChar, upperCase);
+  }
+
+  else if (lcChoice && spChoice && numchoice){
+    choices= lowerCase.concat(numValue, spChar);
+  }
+
+   else if (spChoice && ucChoice && numchoice){
+    choices= spChar.concat(numValue,upperCase);
+  } 
+
+  //Else if for 2 options (sp,n) (sp,lc) (sp, uc) (lc, n) (lc, uc) (n, uc)
+  else if (spChoice && numchoice){
+    choices= spChar.concat(numValue);
+  }
+
+  else if (spChoice && lcChoice){
+    choices = spChar.concat(lowerCase);
+  }
+
+  else if (spChoice && ucChoice){
+    choices = spChar.concat(upperCase);
+  }
+
+  else if (lcChoice && numchoice){
+    choices = lowerCase.concat(numValue);
+  }
+   
+
+  else if (lcChoice && ucChoice){
+    choices = lowerCase.concat(upperCase);
+  }
+
+  else if (numchoice && ucChoice){
+    choices = numValue.concat(upperCase);
+  }
+
+  //else if for one choice
+
+  else if (lcChoice){
+    choices = lowerCase;
+  }
+
+  else if (ucChoice){
+    choices = upperCase;
+  }
+
+  else if(numchoice){
+    choices = numValue;
+  }
+
+  else if (spChoice){
+    choice = spChar;
+  }
+
+  var password =[];
+    for(i = 0; i===number; i++){
+      password += newArray[Math.floor(Math.random()* newArray.number)]
     }
 
-  var ucChoice = confirm("How about uppercase chacracters?");
-  if(ucChoice){
-    newArray.push.apply(newArray, lowerCase, ucChoice);
-    console.log(newArray);
-  }
-    
-  var numchoice = confirm("Would you like numbers?");
-  if(numchoice){
-    newArray.push.apply(newArray, numValue);
-    console.log(newArray);
-  }
 
-  var spChoice = confirm("How about special charcaters? Like & or $?");
-  if(spChoice){
-    newArray.push.apply(newArray, spChar);
-    console.log(newArray);
-  }
-
-var password ="";
-  for(i = 0; i===number; i++){
-    password += newArray[Math.floor(Math.random()* newArray.number)]
-  }
-return password;
+  return password;
 
 }
-
 
 
 
