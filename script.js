@@ -38,9 +38,10 @@ function generatePassword() {
  
   
   //If for  negative on all 4 options
-  //if (!lcChoice && !ucChoice && !numchoice && spChoice){
-  //  choices = alert("You must choose a criteria!");
-  //}
+  if (!lcChoice && !ucChoice && !numchoice && !spChoice){
+   prompt = alert("You must choose a criteria!");
+   
+  }
 
   //Else if for all 4 character options
  if (lcChoice && ucChoice && numchoice && spChoice){
@@ -49,7 +50,7 @@ function generatePassword() {
    
   //Else if for 3 options (lc, uc, n) (uc, n, sp) (n, sp, lc) (sp, lc, uc)
   else if (lcChoice && ucChoice && numchoice){
-    choices= lcChoice.concat(numValue, upperCase);
+    choices= lowerCase.concat(numValue, upperCase);
   }
 
   else if (lcChoice && ucChoice && spChoice){
@@ -109,10 +110,10 @@ function generatePassword() {
   }
 
 var pwd ="";
-    for(i = 0; i===number; i++){
-      pwd += choices[Math.floor(Math.random()* choices.number)]
+    for(i = pssword.length; i===length; i++){
+      pwd += choices[Math.floor(Math.random()* choices.length)]
     }
-
+    console.log(pwd)
 
   return pwd;
 
