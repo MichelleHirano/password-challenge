@@ -15,7 +15,7 @@ var spChar = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', 
 
 //var choices outside the if statement to concat
 
-var choices;
+var choices = "";
 
 
 //Length of password
@@ -44,7 +44,7 @@ function generatePassword() {
 
   //Else if for all 4 character options
  if (lcChoice && ucChoice && numchoice && spChoice){
-    choices= spChoice.concat(numValue, upperCase, lowerCase);
+    choices= spChar.concat(numValue, upperCase, lowerCase);
   }
    
   //Else if for 3 options (lc, uc, n) (uc, n, sp) (n, sp, lc) (sp, lc, uc)
@@ -108,13 +108,13 @@ function generatePassword() {
     choice = spChar;
   }
 
-  var password =[];
+var pwd ="";
     for(i = 0; i===number; i++){
-      password += newArray[Math.floor(Math.random()* newArray.number)]
+      pwd += choices[Math.floor(Math.random()* choices.number)]
     }
 
 
-  return password;
+  return pwd;
 
 }
 
